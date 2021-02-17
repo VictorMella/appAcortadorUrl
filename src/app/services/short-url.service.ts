@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment'
 @Injectable({
   providedIn: 'root',
 })
 export class ShortUrlService {
-  urlBitly = 'https://api-ssl.bitly.com/v4/bitlinks';
-  token = '81c5bc644ff2c3c008f4ea79456cc9d34e7cc806';
-  
+  urlBitly = environment.urlBitly
+  token = environment.token
+
 
   constructor(private http: HttpClient) { }
 
